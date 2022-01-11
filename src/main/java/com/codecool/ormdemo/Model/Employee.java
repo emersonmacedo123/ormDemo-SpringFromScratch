@@ -1,6 +1,8 @@
 package com.codecool.ormdemo.Model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Employee {
@@ -8,8 +10,12 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @NotBlank(message = "First name is mandatory")
     private String firstName;
 
+    @NotNull
+    @NotBlank(message = "Last name is mandatory")
     private String lastName;
 
     @Transient
