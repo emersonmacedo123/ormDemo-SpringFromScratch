@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies - Main</title>
+</head>
+<body>
+<h1>To show all companies here</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr th:each="company : ${companies}" >
+        <td th:text="${company.id}"></td>
+        <td th:text="${company.name}"></td>
+        <td><a th:href="@{/edit/{id}(id=${company.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${company.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/add-company" >Add new company</a>
+
+
+</body>
+</html>

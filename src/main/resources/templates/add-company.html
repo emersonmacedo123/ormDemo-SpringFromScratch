@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Add new company</h1>
+<form action="#" th:action="@{/add-company}" th:object="${company}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Company Name">
+    <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <input type="submit" value="Add User">
+</form>
+</body>
+</html>
+</body>
+</html>
