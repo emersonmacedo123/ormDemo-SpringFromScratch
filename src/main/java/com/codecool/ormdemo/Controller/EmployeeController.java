@@ -42,7 +42,7 @@ public class EmployeeController {
     @PostMapping("/add-employee")
     public String addEmployee(@Valid Employee employee, BindingResult result, Model model){
         if(result.hasErrors()){
-            return "add-user";
+            return "add-new-employee";
         }
         employeeService.save(employee);
         return "redirect:/employees";
