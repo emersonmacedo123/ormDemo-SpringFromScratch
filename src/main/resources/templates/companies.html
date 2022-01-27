@@ -12,6 +12,7 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>No Employees</th>
     </tr>
     </thead>
 
@@ -20,6 +21,7 @@
     <tr th:each="company : ${companies}" >
         <td th:text="${company.id}"></td>
         <td th:text="${company.name}"></td>
+        <td th:text="${company.employees.size()}" ></td>
         <td><a th:href="@{/edit/{id}(id=${company.id})}">Edit</a></td>
         <td><a th:href="@{/delete/{id}(id=${company.id})}">Delete</a></td>
     </tr>
