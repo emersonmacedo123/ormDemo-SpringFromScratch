@@ -6,6 +6,20 @@
 </head>
 <body>
 <h1>Employees page</h1>
+<form action="#" th:action="@{/employees}" method="get">
+    <label id="company_filter">Filter by Company</label>
+    <select id="company" name="companyId">
+        <option value="" >All</option>
+        <option th:each="comp: ${companies}"
+                th:value="${comp.id}"
+                th:text="${comp.name}"
+                th:selected="${comp.name==choosenCompanyName}">
+
+        </option>
+        <input type="submit" value="Search">
+    </select>
+</form>
+
 <table>
     <thead>
         <tr>
@@ -18,16 +32,14 @@
         </tr>
     </thead>
 
-
     <tbody>
         <tr th:each="employee : ${employees}" >
             <td th:text="${employee.id}"></td>
             <td th:text="${employee.firstName}"></td>
             <td th:text="${employee.lastName}" ></td>
-            <td th:text="${employee.company.name}" ></td>
+            <td th:text="${employee.company.getName()}" ></td>
             <td><a th:href="@{/edit/{id}(id=${employee.id})}">Edit</a></td>
             <td><a th:href="@{/delete/{id}(id=${employee.id})}">Delete</a></td>
-
         </tr>
     </tbody>
 </table>

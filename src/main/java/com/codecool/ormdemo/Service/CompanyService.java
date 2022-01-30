@@ -1,11 +1,11 @@
 package com.codecool.ormdemo.Service;
 
 import com.codecool.ormdemo.Model.Company;
-import com.codecool.ormdemo.Model.Employee;
 import com.codecool.ormdemo.Repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -24,4 +24,12 @@ public class CompanyService {
     public void save(Company company){
         companyRepository.save(company);
     }
+
+//    public Optional<Company> getCompanyById(Long companyId) {
+//        return companyRepository.findById(companyId).get().getName();
+//    }
+
+
+
+
 }

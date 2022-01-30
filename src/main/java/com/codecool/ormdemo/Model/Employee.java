@@ -30,9 +30,10 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, Company company) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.company = company;
     }
 
     public Company getCompany() {
